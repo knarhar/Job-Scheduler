@@ -7,19 +7,19 @@ completed, failed) is broadcast as events to logging/monitoring/statistics subsc
 ## Project structure
 ```
 Job_Schedule/
-   ├── Job.cs                  # Job model (Id, Name, Status, Executor, ...)
-   ├── JobStatus.cs            # Pending / Running / Completed / Failed
-   ├── JobEventArgs.cs         # Event payload (Job, EventName, Error)
-   ├── JobException.cs         # Custom exception carrying the failing Job
-   ├── JobQueue.cs             # Array-backed queue with auto-resize on Enqueue
-   ├── JobQueueEnumerator.cs   # Custom IEnumerator, yields only Pending jobs
-   ├── Scheduler.cs            # Runs all pending jobs, raises JobStateChanged
-   ├── Executors.cs            # FastExecutor / SafeExecutor / RetryExecutor
-   ├── Program.cs              # Entry point — wires everything together
-   └── Services/
-      ├── MonitoringService.cs    # Prints event + job status
-      ├── LoggerService.cs        # Prints timestamped log lines
-      └── StatisticsService.cs    # Tracks started/completed/failed counts
+├── Job.cs                  # Job model (Id, Name, Status, Executor, ...)
+├── JobStatus.cs            # Pending / Running / Completed / Failed
+├── JobEventArgs.cs         # Event payload (Job, EventName, Error)
+├── JobException.cs         # Custom exception carrying the failing Job
+├── JobQueue.cs             # Array-backed queue with auto-resize on Enqueue
+├── JobEnumerator.cs   # Custom IEnumerator, yields only Pending jobs
+├── Scheduler.cs            # Runs all pending jobs, raises JobStateChanged
+├── Executors.cs            # FastExecutor / SafeExecutor / RetryExecutor
+├── Program.cs              # Entry point — wires everything together
+└── Services/
+   ├── MonitoringService.cs    # Prints event + job status
+   ├── LoggerService.cs        # Prints timestamped log lines
+   └── StatisticsService.cs    # Tracks started/completed/failed counts
 ```
 
 ## How it works
