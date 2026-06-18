@@ -12,7 +12,7 @@ Job_Schedule/
 ├── JobEventArgs.cs         # Event payload (Job, EventName, Error)
 ├── JobException.cs         # Custom exception carrying the failing Job
 ├── JobQueue.cs             # Array-backed queue with auto-resize on Enqueue
-├── JobEnumerator.cs   # Custom IEnumerator, yields only Pending jobs
+├── JobEnumerator.cs        # Custom IEnumerator, yields only Pending jobs
 ├── Scheduler.cs            # Runs all pending jobs, raises JobStateChanged
 ├── Executors.cs            # FastExecutor / SafeExecutor / RetryExecutor
 ├── Program.cs              # Entry point — wires everything together
